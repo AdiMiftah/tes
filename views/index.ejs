@@ -1,0 +1,275 @@
+<%- include('../template/head')-%>
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+                    <h1 class="h3 mb-2 text-gray-800" style="text-align:center"><b>Dashboard</b></h1>
+                    <br>
+                    <!-- Content Row -->
+
+                    <div class="row">
+
+                        <!-- Area Chart -->
+                        <div class="col-xl-8 col-lg-7">
+                            <div class="card shadow mb-4">
+                                <!-- Card Header - Dropdown -->
+                                <div
+                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-primary">Grafik Nilai Siswa Masuk</h6>
+
+                                </div>
+                                <!-- Card Body -->
+                                <div class="card-body">
+                                    <div class="chart-area">
+                                        <canvas id="myAreaChart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    <!-- Content Row -->
+
+                    <div class="col-md-4">
+
+                        <div class="card">
+                          <div class="card-header card-header-large bg-light d-flex align-items-center">
+                            <div class="flex">
+                              <h6 class="m-0 font-weight-bold text-primary" >Top 7</h6>
+                              <!-- <br> -->
+                              <!-- <div class="card-subtitle text-muted">Peringkat Siswa Batch ini</div> -->
+                            </div>
+                          </div>
+                          <ul class="list-group list-rankings">
+                            <% CompletionName.forEach(function(entry) {%>
+                            <li class="list-group-item">
+                              <div class="media align-items-center">
+                                <span class="mr-2"><%=entry.num%>.</span>
+                                <!-- <img src="assets/images/256_daniel-gaffey-1060698-unsplash.jpg" class="img-fluid rounded-circle mr-2" width="30" alt="..."> -->
+                                <div class="media-body">
+                                  <a href="#"><%=entry.name%></a>
+                                </div>
+                                <div><%=entry.completioncourse%>%</div>
+                              </div>
+                            </li>
+                            <%});%>
+
+                          </ul>
+
+                        </div>
+                    </div>
+
+
+                    
+
+                    <!-- from here -->
+                    <!-- <div class="row"> -->
+
+                        <!-- new -->
+                        <!-- Content Column -->
+
+                        <!-- <div class="col-lg"-->
+
+                        <div class="card shadow mb-4">
+                            <div class="card-header py-3">
+                                <h6 class="m-0 font-weight-bold text-primary">Tingkat Kelulusan Berdasarkan Modul</h6>
+                            </div>
+                              <div class="card-body">
+                                  <ul class="list-unstyled list-skills">
+                                      <li>
+                                          <div>Overview VR</div>
+                                          <div class="flex">
+                                              <div class="progress" style="height: 6px;">
+                                                  <div class="progress-bar" role="progressbar" style="width: <%= OverviewCompleted %>%" aria-valuenow="<%= OverviewCompleted %>" aria-valuemin="0" aria-valuemax="100"></div>
+                                              </div>
+                                          </div>
+                                          <div class="text-dark-gray"><strong><%= OverviewCompleted %>%</strong></div>
+                                      </li>
+                                      <li>
+                                          <div>Pengantar Kontrol Joystick</div>
+                                          <div class="flex">
+                                              <div class="progress" style="height: 6px;">
+                                                  <div class="progress-bar bg-dark" role="progressbar" style="width: <%= PengantarControlCompleted %>%" aria-valuenow="<%= PengantarControlCompleted %>" aria-valuemin="0" aria-valuemax="100"></div>
+                                              </div>
+                                          </div>
+                                          <div class="text-dark-gray"><strong><%= PengantarControlCompleted %>%</strong></div>
+                                      </li>
+
+                                      <li>
+                                          <div>Basic Traveling</div>
+                                          <div class="flex">
+                                              <div class="progress" style="height: 6px;">
+                                                  <div class="progress-bar bg-success" role="progressbar" style="width: <%= BasicTravelingCompleted %>%" aria-valuenow="<%= BasicTravelingCompleted %>" aria-valuemin="0" aria-valuemax="100"></div>
+                                              </div>
+                                          </div>
+                                          <div class="text-dark-gray"><strong><%= BasicTravelingCompleted %>%</strong></div>
+                                      </li>
+
+                                      <li>
+                                          <div>Penggalian dan Pembuangan</div>
+                                          <div class="flex">
+                                              <div class="progress" style="height: 6px;">
+                                                  <div class="progress-bar bg-dark" role="progressbar" style="width: <%= PenggalianPembuanganCompleted %>%" aria-valuenow="<%= PenggalianPembuanganCompleted %>" aria-valuemin="0" aria-valuemax="100"></div>
+                                              </div>
+                                          </div>
+                                          <div class="text-dark-gray"><strong><%= PenggalianPembuanganCompleted %>%</strong></div>
+                                      </li>
+
+                                      <li>
+                                          <div>Membuat Lereng</div>
+                                          <div class="flex">
+                                              <div class="progress" style="height: 6px;">
+                                                  <div class="progress-bar bg-success" role="progressbar" style="width: <%= MembuatLerengCompleted %>%" aria-valuenow="<%= MembuatLerengCompleted %>" aria-valuemin="0" aria-valuemax="100"></div>
+                                              </div>
+                                          </div>
+                                          <div class="text-dark-gray"><strong><%= MembuatLerengCompleted %>%</strong></div>
+                                      </li>
+
+                                      <li>
+                                          <div>Penggalian Parit Dangkal</div>
+                                          <div class="flex">
+                                              <div class="progress" style="height: 6px;">
+                                                  <div class="progress-bar bg-dark" role="progressbar" style="width: <%= PenggalianParitCompleted %>%" aria-valuenow="<%= PenggalianParitCompleted %>" aria-valuemin="0" aria-valuemax="100"></div>
+                                              </div>
+                                          </div>
+                                          <div class="text-dark-gray"><strong><%= PenggalianParitCompleted %>%</strong></div>
+                                      </li>
+
+                                      <li>
+                                          <div>Menangani Banyak Truck dari Bench</div>
+                                          <div class="flex">
+                                              <div class="progress" style="height: 6px;">
+                                                  <div class="progress-bar bg-success" role="progressbar" style="width: <%= MenanganiBanyakCompleted %>%" aria-valuenow="<%= MenanganiBanyakCompleted %>" aria-valuemin="0" aria-valuemax="100"></div>
+                                              </div>
+                                          </div>
+                                          <div class="text-dark-gray"><strong><%= MenanganiBanyakCompleted %>%</strong></div>
+                                      </li>
+
+                                  </ul>
+                              </div>
+
+                          </div>
+
+                        <div class="col-lg-4 mb-4">
+
+                            <!-- Project Card Example -->
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">Nilai Masuk</h6>
+                                </div>
+                                <div class="card-body">
+                                    <h4 class="small font-weight-bold">Overview VR <span
+                                            class="float-right"><%= OverviewAssigned %>%</span></h4>
+                                    <div class="progress mb-4">
+                                        <div class="progress-bar bg-danger" role="progressbar" style="width: <%= OverviewAssigned %>%"
+                                            aria-valuenow="<%= OverviewAssigned %>" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <h4 class="small font-weight-bold">Pengantar Kontrol Joystick <span
+                                            class="float-right"><%= PengantarControlAssigned %>%</span></h4>
+                                    <div class="progress mb-4">
+                                        <div class="progress-bar bg-warning" role="progressbar" style="width: <%= PengantarControlAssigned %>%"
+                                            aria-valuenow="<%= PengantarControlAssigned %>" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <h4 class="small font-weight-bold">Basic Travelling <span
+                                            class="float-right"><%= BasicTravelingAssigned %>%</span></h4>
+                                    <div class="progress mb-4">
+                                        <div class="progress-bar" role="progressbar" style="width: <%= BasicTravelingAssigned %>%"
+                                            aria-valuenow="<%= BasicTravelingAssigned %>" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div> 
+                                    <h4 class="small font-weight-bold">Penggalian dan Pembuangan <span
+                                            class="float-right"><%= PenggalianPembuanganAssigned %>%</span></h4>
+                                    <div class="progress mb-4">
+                                        <div class="progress-bar bg-info" role="progressbar" style="width: <%= PenggalianPembuanganAssigned %>%"
+                                            aria-valuenow="<%= PenggalianPembuanganAssigned %>" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <h4 class="small font-weight-bold">Membuat Lereng<span
+                                            class="float-right"><%= MembuatLerengAssigned %>%</span></h4>
+                                    <div class="progress">
+                                        <div class="progress-bar bg-success" role="progressbar" style="width: <%= MembuatLerengAssigned %>%"
+                                            aria-valuenow="<%= MembuatLerengAssigned %>" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+
+                                    <br>
+
+                                    <h4 class="small font-weight-bold">Penggalian Parit Dangkal <span
+                                        class="float-right"><%= PenggalianParitAssigned %>%</span></h4>
+                                <div class="progress mb-4">
+                                    <div class="progress-bar bg-danger" role="progressbar" style="width:<%= PenggalianParitAssigned %>%"
+                                        aria-valuenow="<%= PenggalianParitAssigned %>" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <h4 class="small font-weight-bold">Menangani Banyak Truck dari Bench <span
+                                        class="float-right"><%= MenanganiBanyakAssigned %>%</span></h4>
+                                <div class="progress mb-4">
+                                    <div class="progress-bar bg-warning" role="progressbar" style="width: <%= MenanganiBanyakAssigned %>%"
+                                        aria-valuenow="<%= MenanganiBanyakAssigned %>" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                        <!-- close -->
+                        <div class="col-md-4">
+
+                            <div class="card">
+                              <div class="card-header card-header-large bg-light d-flex align-items-center">
+                                <div class="flex">
+                                  <h6 class="m-0 font-weight-bold text-primary">Last Activity</h6>
+                                  <!-- <br> -->
+                                  <!-- <div class="card-subtitle text-muted">Peringkat Siswa Batch ini</div> -->
+                                </div>
+
+
+
+                              </div>
+
+
+                              <ul class="list-group list-rankings">
+
+                                <% LastActivity.forEach(function(entry) {%>
+                                <li class="list-group-item">
+                                  <div class="media align-items-center">
+                                    <span class="mr-2"><%=entry.num%>.</span>
+                                    <!-- <img src="assets/images/256_daniel-gaffey-1060698-unsplash.jpg" class="img-fluid rounded-circle mr-2" width="30" alt="..."> -->
+                                    <div class="media-body">
+                                      <a href="#"><%=entry.name%></a>
+                                    </div>
+                                    <div><%=entry.formatted_date%></div>
+                                  </div>
+                                </li>
+                                <%});%>
+                                
+
+
+                              </ul>
+
+                            </div>
+                        </div>
+
+
+                        </div>
+                      </div>
+
+                      <script>
+                        function check() {
+                        if(document.getElementById('passwordid').value ===
+                                document.getElementById('confirmpasswordid').value) {
+                            document.getElementById('submit').disabled = false;
+                        } else {
+                            document.getElementById('submit').disabled = true;
+                        }
+                    }
+                    
+                    function cap()
+                        {
+                            console.log('run');
+                            document.getElementById('edit_name_id').innerHTML =  document.getElementById('edit_name_id').innerHTML.toUpperCase();
+                        }
+                    </script>
+
+                    <!-- to here -->
+
+
+
+<%- include('../template/chart')-%>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Male_Fashion Template">
+    <meta name="keywords" content="Male_Fashion, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>WELCOME TO UT</title>
+    <div class="section-title">
+        <span>UNITED TRACTOR</span>
+        <h2>TAMU</h2>
+    </div>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+    <body>
+        <div>            
+        <form class="user" method="POST"  style="margin: 40px 30px 0 30px;font-size: 50px;">
+            <div class="form-group">
+                <input type="date" class="form-control form-control-user" name="hari_tgl" style="font-size: 30px;">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control form-control-user" name="nama" style="font-size: 30px;"
+                    placeholder="nama">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control form-control-user" name="perusahaan" style="text-transform:capitalize;font-size: 30px;"
+                    placeholder="perusahaan">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control form-control-user" name="no_kendaraan" required minlength="4" style="font-size: 30px;"
+                    placeholder="no kendaraan">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control form-control-user" name="tujuan_nama" required minlength="4" style="font-size: 30px;"
+                    placeholder="nama yang dituju">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control form-control-user" name="keperluan" required minlength="4" style="font-size: 30px;"
+                    placeholder="keperluan">
+            </div>
+            <div class="form-group">
+                <input type="time" class="form-control form-control-user" name="jam_in" required minlength="4" style="font-size: 30px;"
+                    placeholder="jam in">
+            </div>
+            <div class="form-group">
+                <select class="form-control-user" name="edit_status" placeholder="Select" id="status">
+                    <option value="sedang berkunjung"></option>
+                </select>                    
+          </div>          
+            <div class="text-center">
+                <button class="btn btn-primary btn-user" formaction="/admin/tamu" id="submit" onclick="" style="width: 240px; height: 85px; font-size: 25px; margin: 40px;" href="selesai.ejs">Register Account</button>
+            </div>
+        </form>
+        </div>
+    </body>
+
+        <!-- Bootstrap core JavaScript-->
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    
+        <!-- Core plugin JavaScript-->
+        <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    
+        <!-- Custom scripts for all pages-->
+        <script src="js/sb-admin-2.min.js"></script>
+
+        
+</html>
